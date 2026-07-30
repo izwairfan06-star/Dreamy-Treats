@@ -9,15 +9,16 @@
 * Interactive Feedback System: Custom sentiment rating scale utilizing emoji selectors to collect customer impressions.
 * Fully Responsive UI:Styled with clean layout principles to ensure seamless viewing across mobile, tablet, and desktop devices.
   
-**Tech Stack**
+**Tech Stack:**
 Frontend:React, JavaScript (ES6+), HTML5, CSS3
 Build Tool: Vite
 Version Control: Git & GitHub
-**Project Showcase**
+## Project Showcase:
 If you'd like to see this project in action, check out my LinkedIn post where I've shared the project demo and details:
 🔗 LinkedIn Post: https://www.linkedin.com/posts/izwa-irfan-569967332_reactjs-frontenddevelopment-webdevelopment-ugcPost-7484523228586143744-oDCm/?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFPKpGEBuWbTgf2n3Gb-7mn7LfcLoBtYRrw
 Feel free to connect with me on LinkedIn and share your feedback!
-
+## Live Demo: 
+https://dreamytreats.netlify.app/
 **Project Structure**
 ```text
 dreamytreats/
