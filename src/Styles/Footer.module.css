@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to drop to the next line on small screens */
+  gap: 20px; /* Adds spacing between items when they stack */
+  background-color: #ffffff; 
+  padding: 30px 8%; /* Slightly increased top/bottom padding for better spacing */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+  position: relative; /* Changed to relative so it naturally stays at the bottom */
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #5c3d2e; 
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+.list {
+  padding-top: 10px;
+  color: #8d7b68;
+  list-style: none;
+}
+
+.socialContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.iconList {
+  display: flex;
+  gap: 15px; 
+  align-items: center;
+}
+
+.iconList a {
+  transition: transform 0.2s ease;
+}
+
+.iconList a:hover {
+  transform: scale(1.1); 
+}
+
+.fbIcon { color: #1877F2; }
+.instaIcon { color: #E1306C; }
+.tiktokIcon { color: #000000; }
+
+/* Smooth hover effect for address lines */
+.list li {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.list li:hover {
+  color: #5c3d2e; 
+  transform: translateX(5px); 
+}
+
+/* Hover effect for the email link */
+.emailLink {
+  color: #8d7b68;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.emailLink:hover {
+  color: #5c3d2e;
+}
+
+/* ==========================================================================
+   Media Query for Mobile Devices (768px and below)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Stacks layout vertically */
+    text-align: center;     /* Centers all text */
+    align-items: center;    /* Centers items horizontally */
+    padding: 40px 5%;       /* Adjusts padding for mobile screens */
+    gap: 30px;              /* Gives breathing room between stacked sections */
+  }
+
+  .socialContainer {
+    align-items: center;    /* Centers social icons and heading on mobile */
+  }
+
+  .list li:hover {
+    transform: translateY(-2px); /* On mobile, sliding up feels better than sliding right when centered */
+  }
+}

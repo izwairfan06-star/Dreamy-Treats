@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+/* Page Wrapper */
+.menu-container {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 70px; /* Space between different sections */
+}
+
+.menu-section {
+  width: 100%;
+}
+
+/* Header Entrance Animation */
+.section-header {
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.section-number {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a2c2a; 
+  margin: 0 0 6px 0;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #707070;
+  margin: 0;
+}
+
+/* Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Card Base & Entrance Animation */
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: transparent;
+  
+  /* Smooth transitions for hover state */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.4s ease;
+
+  /* Staggered load-in behavior */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--index) * 0.08s);
+}
+
+/* Card Hover Effects */
+.menu-card:hover {
+  transform: translateY(-6px);
+  background-color: #fcfbfa;
+  box-shadow: 0 12px 30px rgba(74, 44, 42, 0.06);
+}
+
+/* Image Container & Zoom Effect */
+.image-container {
+  width: 100%;
+  aspect-ratio: 4 / 3; 
+  border-radius: 8px; 
+  overflow: hidden;
+  margin-bottom: 14px;
+  background-color: #f5f5f5;
+}
+
+.menu-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Zoom image on card hover */
+.menu-card:hover .menu-image {
+  transform: scale(1.05);
+}
+
+/* Typography Micro-interactions */
+.menu-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.menu-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.menu-card:hover .menu-name {
+  color: #4a2c2a;
+}
+
+.menu-price {
+  font-size: 0.85rem;
+  color: #a3a3a3;
+  transition: color 0.3s ease;
+}
+
+.menu-card:hover .menu-price {
+  color: #8c7371;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive design styles */
+@media (max-width: 992px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}

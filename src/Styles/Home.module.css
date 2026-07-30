@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.img{
+    height: 400px;
+    background-image: url("https://i.pinimg.com/736x/fd/5d/30/fd5d30d148f3b45125e0c0af9976dca4.jpg");
+    background-size: cover;
+}
+.text{
+    position: absolute;
+  bottom: 120px;   /* Distance from the bottom of the banner */
+  left: 70px;     /* Distance from the left side of the banner */
+  color: white;   /* Makes the text visible against the dark image */
+  z-index: 10;
+}
+.text h1, .text p {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+.text h1{
+     color: #cca377;
+}
+.orderBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #5c3a21; /* Warm dark brown to match your branding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects for interactivity */
+.orderBtn:hover {
+  background-color: #72492a; /* Slightly lighter shade on hover */
+  transform: translateY(-2px); /* Gentle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active press effect */
+.orderBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+/* Section 2 */
+.introSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  background-color: #ffffff; /* Matches the clean white background */
+  gap: 40px; /* Ensures text blocks don't collide on smaller screens */
+}
+
+.introHeading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #5c3a21; /* Warm dark brown theme color */
+  line-height: 1.2;
+  flex: 1;      /* Allows it to take up proportional space */
+  min-width: 300px;
+}
+.introText {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #5c3a21;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 300px;
+}
+
+.categoriesSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Creates 4 equal columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+}
+
+.categoryCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardNumber {
+  font-size: 0.9rem;
+  color: #a1887f; /* Soft gray-brown for metadata numbers */
+  margin-bottom: 4px;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5c3a21; /* Theme brand dark brown */
+  margin-bottom: 12px;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 250px; /* Adjust height to match your desired aspect ratio */
+  overflow: hidden;
+  border-radius: 12px; /* Gives those smooth rounded card corners */
+}
+
+.imageWrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps image proportions clean without stretching */
+  transition: transform 0.4s ease;
+}
+
+/* Subtle interactive hover zoom */
+.categoryCard:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================== */
+
+/* Tablet & Smaller Desktops (Max-width: 1024px) */
+@media (max-width: 1024px) {
+    .categoriesSection {
+        grid-template-columns: repeat(2, 1fr); /* Drop to 2 columns */
+        padding: 40px;
+    }
+}
+
+/* Mobile Devices (Max-width: 768px) */
+@media (max-width: 768px) {
+    /* Hero Banner Text Adjustments */
+    .img {
+        height: 350px; /* Slightly reduce banner height */
+        position: relative; /* Context for mobile text positioning */
+    }
+
+    .text {
+        /* Reset absolute pixel pushes to center/adjust content safely */
+        position: absolute;
+        bottom: 40px;
+        left: 20px;
+        right: 20px; /* Prevents text from flowing off right edge */
+        z-index: 10;
+    }
+
+    .text h1 {
+        font-size: 2rem; /* Scale down heading size */
+    }
+
+    .text p {
+        font-size: 0.95rem;
+    }
+
+    /* Section 2: Intro (Stack vertically) */
+    .introSection {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns text cleanly to the left */
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .introHeading {
+        font-size: 2rem;
+        min-width: 100%;
+    }
+
+    .introText {
+        font-size: 1rem;
+        min-width: 100%;
+    }
+
+    /* Categories Grid (Stack vertically) */
+    .categoriesSection {
+        grid-template-columns: 1fr; /* 1 card per row */
+        padding: 20px;
+        gap: 30px; /* Slightly more space between vertical cards */
+    }
+    .imageWrapper {
+        height: 220px; /* Slightly shorter image blocks for better vertical scrolling */
+    }
+    
+    .cardTitle {
+        font-size: 1.3rem;
+    }
+}

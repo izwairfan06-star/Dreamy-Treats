@@ -1,0 +1,218 @@
+/* Base Layout Wrapper with Image's Soft Tan/Cream Background Gradient */
+.order-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, #f7f4eb 0%, #ffffff 50%, #fbeed9 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* --- Reminders Layout --- */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4a2c2a;
+  margin-bottom: 32px;
+}
+
+.reminders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.reminder-card {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 16px;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(74, 44, 42, 0.03);
+  
+  /* Shared smooth animation ecosystem */
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}
+
+.card-image-box {
+  width: 40%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-text-box {
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4a2c2a;
+  margin: 0 0 6px 0;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* --- Split Pane Booking Section --- */
+.booking-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.cta-column {
+  width: 45%;
+  position: sticky;
+  top: 40px;
+}
+
+.cta-title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #4a2c2a;
+  margin: 0 0 16px 0;
+}
+
+.cta-subtitle {
+  font-size: 1.1rem;
+  color: #666666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Form Container Styling */
+.form-column {
+  width: 55%;
+}
+
+.order-form {
+  background-color: #f3eae0; /* Warm muted beige backdrop matching image form container */
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 8px 30px rgba(74, 44, 42, 0.04);
+}
+
+.form-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4a2c2a;
+  margin: 0 0 8px 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #5a403e;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcd1c4;
+  border-radius: 8px;
+  background-color: #fcfbfa;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+  border-color: #4a2c2a;
+  box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.1);
+}
+
+/* Specifically styles the multi-order inputs inside the screen layout */
+.disabled-like-placeholder {
+  background-color: #e5ded4 !important;
+  color: #8c8275 !important;
+  border-color: transparent !important;
+  margin-bottom: 4px;
+}
+
+.submit-btn {
+  background-color: #4a2c2a; /* Authentic warm chocolate brown button */
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 25px; /* Fully rounded caps matching the image submit button */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submit-btn:hover {
+  background-color: #38201f;
+}
+
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+.form-footer-note {
+  font-size: 0.7rem;
+  color: #9c8e7e;
+  text-align: center;
+  margin-top: -4px;
+}
+
+/* --- Keyframe Entry Animations --- */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Responsive Adaptations --- */
+@media (max-width: 915px) {
+  .reminders-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-section {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .cta-column, .form-column {
+    width: 100%;
+  }
+  
+  .order-form {
+    padding: 24px;
+  }
+}

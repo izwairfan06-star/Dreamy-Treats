@@ -1,0 +1,46 @@
+.orderBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #5c3a21; /* Warm dark brown to match your branding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover effects for interactivity */
+.orderBtn:hover {
+  background-color: #72492a; /* Slightly lighter shade on hover */
+  transform: translateY(-2px); /* Gentle lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Active press effect */
+.orderBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.submitbtn {
+  background-color: #4a2c2a; /* Authentic warm chocolate brown button */
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 25px; /* Fully rounded caps matching the image submit button */
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.submitbtn:hover {
+  background-color: #38201f;
+}
+
+.submitbtn:active {
+  transform: scale(0.99);
+}

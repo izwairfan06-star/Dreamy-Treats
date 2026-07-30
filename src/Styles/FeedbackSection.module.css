@@ -1,0 +1,192 @@
+/* Container Wrapper */
+.feedback_container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 0 20px; /* Padding bottom handles by the banner image spacing */
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* Split Pane Grid */
+.main_split {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.text_side {
+  width: 45%;
+}
+
+.main_title {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #4a2c2a; /* Warm signature brown tone */
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+}
+
+.sub_text {
+  font-size: 1.1rem;
+  color: #666666;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.form_side {
+  width: 55%;
+}
+
+/* Form Container Card */
+.feedback_form {
+  background-color: #f3eae0; /* Matching soft warm container background */
+  padding: 40px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 8px 30px rgba(74, 44, 42, 0.03);
+}
+
+.form_group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form_group label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #5a403e;
+}
+
+.form_group input,
+.form_group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dcd1c4;
+  border-radius: 8px;
+  background-color: #fcfbfa;
+  font-size: 0.95rem;
+  color: #2b2b2b;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form_group input:focus,
+.form_group textarea:focus {
+  border-color: #4a2c2a;
+  box-shadow: 0 0 0 3px rgba(74, 44, 42, 0.1);
+}
+
+/* Emoji Rating Matrix */
+.rating_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.rating_box {
+  background-color: #e5ded4; /* Default container emoji fill color */
+  border: 1px solid transparent;
+  border-radius: 8px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+
+.emoji_icon {
+  font-size: 1.5rem;
+  filter: grayscale(0.2) contrast(0.9); /* Gives the flat monochrome look seen in the UI */
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+/* Rating Hover and Selected States */
+.rating_box:hover {
+  background-color: #dad2c7;
+  transform: translateY(-2px);
+}
+
+.rating_box:hover .emoji-icon {
+  filter: grayscale(0);
+  transform: scale(1.1);
+}
+
+.active_rating {
+  background-color: #ffffff;
+  border-color: #4a2c2a;
+}
+
+.active_rating .emoji-icon {
+  filter: grayscale(0);
+}
+
+/* Action Button */
+.submit_btn {
+  background-color: #4a2c2a;
+  color: #ffffff;
+  padding: 14px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 4px;
+}
+
+.submit_btn:hover {
+  background-color: #38201f;
+}
+
+.submit_btn:active {
+  transform: scale(0.99);
+}
+
+.footer_note {
+  font-size: 0.72rem;
+  color: #9c8e7e;
+  text-align: center;
+}
+
+/* Bottom Full-width Image Area */
+.banner_image-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 21 / 9; /* Perfect wide panoramic crop layout */
+  margin-bottom: 20px;
+}
+
+.banner_image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 915px) {
+  .main_split {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .text_side, .form_side {
+    width: 100%;
+  }
+
+  .main_title {
+    font-size: 2.2rem;
+  }
+
+  .feedback_form {
+    padding: 24px;
+  }
+}
